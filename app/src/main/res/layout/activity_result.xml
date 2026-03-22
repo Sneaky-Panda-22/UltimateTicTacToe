@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- ── RESULT HEADER ── -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="GAME OVER"
+            android:textSize="11sp"
+            android:letterSpacing="0.3"
+            android:textColor="#9E9E9E"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvWinnerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 1 Wins!"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tvWinnerSymbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ── DIVIDER ── -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="#1A1A1A" />
+
+        <!-- ── MATCH SUMMARY CARD ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MATCH SUMMARY"
+                android:textSize="11sp"
+                android:letterSpacing="0.2"
+                android:textColor="#9E9E9E"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <TextView
+                    android:id="@+id/tvMatchSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Match summary will appear here."
+                    android:textSize="14sp"
+                    android:textColor="#444444"
+                    android:lineSpacingExtra="6dp" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!-- ── RATE THE MATCH ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RATE THE MATCH"
+                android:textSize="11sp"
+                android:letterSpacing="0.2"
+                android:textColor="#9E9E9E"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How was this game?"
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="12dp" />
+
+            <RatingBar
+                android:id="@+id/ratingMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1"
+                android:rating="0"
+                style="@style/RatingBarStyle" />
+        </LinearLayout>
+
+        <!-- ── REACTIONS CARD ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="32dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REACTIONS"
+                android:textSize="11sp"
+                android:letterSpacing="0.2"
+                android:textColor="#9E9E9E"
+                android:textStyle="bold"
+                android:layout_marginBottom="14dp" />
+
+            <CheckBox
+                android:id="@+id/cbGoodGame"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Good game 🤝"
+                android:textSize="15sp"
+                android:textColor="#1A1A1A"
+                android:buttonTint="#1A1A1A"
+                android:gravity="center_vertical" />
+
+            <CheckBox
+                android:id="@+id/cbRematch"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="I want a rematch 🔥"
+                android:textSize="15sp"
+                android:textColor="#1A1A1A"
+                android:buttonTint="#1A1A1A"
+                android:gravity="center_vertical" />
+
+            <CheckBox
+                android:id="@+id/cbLucky"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="That was lucky 🍀"
+                android:textSize="15sp"
+                android:textColor="#1A1A1A"
+                android:buttonTint="#1A1A1A"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <!-- ── REMATCH BUTTON ── -->
+        <Button
+            android:id="@+id/btnRematch"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="REMATCH"
+            android:textSize="15sp"
+            android:letterSpacing="0.15"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1A1A1A"
+            android:layout_marginBottom="12dp" />
+
+        <!-- ── MAIN MENU BUTTON ── -->
+        <Button
+            android:id="@+id/btnMainMenu"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Main Menu"
+            android:textSize="14sp"
+            android:textColor="#1A1A1A"
+            android:backgroundTint="#E0E0E0"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>
